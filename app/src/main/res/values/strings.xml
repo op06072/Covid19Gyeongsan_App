@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">코로나19 경산</string>
+    <string name="package_name">com.example.covid19gyeonsan</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

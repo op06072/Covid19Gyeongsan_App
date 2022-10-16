@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_main"
+    tools:context=".MapsActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_toolbar"
+        android:background="#005BAA"
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+
+        <RelativeLayout
+            android:id="@+id/positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/patients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumbarungothicbold"
+                android:text="확진자 "
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                />
+
+            <TextView
+                android:id="@+id/numOfPatients"
+                android:layout_width='wrap_content'
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/patients"
+                android:layout_toEndOf="@id/patients"
+                android:fontFamily="@font/nanumbarungothicbold"
+                android:text="0명"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/on"
+                android:layout_width='wrap_content'
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/patients"
+                android:layout_toEndOf="@id/numOfPatients"
+                android:fontFamily="@font/nanumbarungothicbold"
+                android:text="기준"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <!--<Button
+            android:layout_width="30dp"
+            android:id="@+id/notice"
+            android:background="@drawable/ic_notice_button"
+            android:layout_alignTop="@id/positive"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_height="30dp" />-->
+
+        <TextView
+            android:text="검사중 0명"
+            android:theme="@style/TextTheme"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/onCheck"
+            android:layout_below="@id/positive"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:text="완치 0명"
+            android:theme="@style/TextTheme"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/cure"
+            android:layout_below="@+id/positive"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:text="음성 0명"
+            android:theme="@style/TextTheme"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/negative"
+            android:layout_below="@id/onCheck"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/local_patients"
+            android:theme="@style/TextTheme2"
+            android:text=""
+            android:layout_below="@+id/cure"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="15dp"/>
+
+    </RelativeLayout>
+
+    <!--<TextView
+        android:id="@+id/text_notice"
+        android:text="공지사항"
+        android:background="#55808080"
+        android:layout_below="@+id/layout_toolbar"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>-->
+
+    <fragment
+        android:id="@+id/main_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_below="@+id/layout_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <TextView
+        android:id="@+id/ItemSpinnerMenu"
+        android:text = "정보"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@android:color/black"
+        android:layout_alignTop="@id/spinner_people"
+        android:layout_toStartOf="@id/spinner_people"
+        android:textSize="15sp"
+        android:background="@drawable/custom_textview" />
+
+    <Spinner
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:id="@+id/spinner_menu"
+        android:popupBackground="#FFFFFF"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@id/spinner_people"
+        android:layout_toStartOf="@id/spinner_people"
+        android:layout_marginEnd="15dp"
+        android:background="@null" />
+
+    <Spinner
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:id="@+id/spinner_people"
+        android:popupBackground="#FFFFFF"
+        android:textAlignment="center"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:layout_alignTop="@id/spinner_people2"
+        android:layout_toStartOf="@id/spinner_people2"
+        android:background="@null" />
+
+    <Spinner
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:id="@+id/spinner_people2"
+        android:popupBackground="#FFFFFF"
+        android:layout_below="@id/layout_toolbar"
+        android:layout_marginTop="15dp"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:background="@null" />
+
+</RelativeLayout>
